@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>主页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/mui.min1.css">
+    <link href="css/app/previewimage.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app/Home_Page.css"/>
+    <link href="css/pullupordown.css" rel="stylesheet"/>
+    <!--自写样式-->
+    <link rel="stylesheet" href="css/app/fightingTheOutbreak/fightingTheOutbreak.css">
+
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.pullToRefresh.js"></script>
+    <script src="js/mui.pullToRefresh.material.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/app/QRcode/utf.js"></script>
+    <script src="js/app/QRcode/qrcode.js"></script>
+    <script src="js/app/QRcode/jquery.qrcode.js"></script>
+    <script src="js/common/rectify_deviation.js"></script>
+    <script src="js/common/common.js"></script>
+    <!--本地相关-->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <script src="js/app/fightTheOutbreak/outbreakConsultation.js"></script>
+    <script src="js/app/fightTheOutbreak/fightTheOutbreak.js"></script>
+    <script src="js/app/fightTheOutbreak/common.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+
+        .cardContent {
+            height: 10rem;
+            /*background-color: #fb9c58;*/
+            background-image: url(image/fightingTheOutbreak/biaotou.png);
+            background-size: 100% 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cardContent img {
+            height: 2.5rem;
+            top: 3rem;
+            position: absolute;
+        }
+
+        .cardBody {
+            background-color: #fdfffe;
+            box-shadow: 3px 3px 3px #888888;
+            border-radius: 5px;
+            position: absolute;
+            width: 90%;
+            top: 60%;
+            padding: .5rem .5rem;
+        }
+
+        .cardHeader {
+            font-size: 1rem;
+        }
+
+        .cardBottom {
+            font-size: .8rem;
+            text-align: center;
+            bottom: 0;
+            color: #2196eb;
+        }
+
+        .cardBody .cardList {
+            display: flex;
+            justify-content: space-around;
+            height: 4rem;
+        }
+
+        .cardList .cardChild {
+            text-align: center;
+            line-height: 2rem;
+        }
+
+        .cardList .cardChild .number {
+            /*color: #e35519;*/
+            font-size: 1.5rem;
+        }
+
+
+        .menuContent {
+            display: flex;
+            margin-top: 4rem;
+            justify-content: space-around;
+        }
+
+        .menuContent img {
+            height: 2.5rem;
+        }
+
+        .menuChild {
+            text-align: center;
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        .newsBox {
+            color: #313131;
+            padding: 0 .3rem;
+            margin-top: 2rem;
+        }
+
+        .newsList {
+            /* padding-bottom: 1.3rem; */
+            /* border-bottom: 1px solid #D4D4D4; */
+            margin-bottom: 2rem;
+            font-family: inherit;
+        }
+
+        .newsList .title {
+            /* text-indent: 2em; */
+            color: #313131;
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        .newsList .answer {
+            display: flex;
+            margin-top: 1rem;
+            /* justify-content: space-around; */
+            color: #8c8c8c;
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        .newsList img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .newsList .detail {
+            padding-top: .2rem;
+            display: flex;
+            align-items: baseline;
+            color: #595959;
+            font-size: .8rem;
+        }
+
+        .newsList .detail span {
+            height: .8rem;
+        }
+
+        /* 窄屏手机特殊处理 */
+        @media screen and (max-width: 320px) {
+            html {
+                font-size: 12px !important;
+            }
+        }
+
+        /* 平板特殊处理 */
+        @media screen and (min-width: 600px) {
+            html {
+                font-size: 30px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="content">
+    <div class="cardContent">
+        <img src="image/fightingTheOutbreak/biaotixiaozhi.png" alt="">
+        <div class="cardBody">
+            <div class="cardHeader">
+                <div class="cardList">
+                    <div class="cardChild">
+                        <div class="number quezhen" id="countryQz">
+
+                        </div>
+                        <div class="people">确诊人数</div>
+                    </div>
+                    <div class="cardChild">
+                        <div class="number yisi" id="countryYz">
+
+                        </div>
+                        <div>疑似人数</div>
+                    </div>
+                    <div class="cardChild">
+                        <div class="number zhiyu" id="countryZy">
+
+                        </div>
+                        <div>治愈人数</div>
+                    </div>
+                    <div class="cardChild">
+                        <div class="number death" id="countrySw">
+
+                        </div>
+                        <div>死亡人数</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardBottom">截止目前，数据来源国家及地方卫生健康委员会</div>
+        </div>
+    </div>
+    <div class="menuContent">
+        <a href="https://m.youlai.cn/whfy/index?type=1">
+            <div class="menuChild">
+                <img src="image/fightingTheOutbreak/feiyanjiexi.png">
+                <div>肺炎解析</div>
+            </div>
+        </a>
+        <a href="https://m.youlai.cn/whfy/juhe?kw=%E6%B4%97%E6%89%8B%E8%A7%84%E8%8C%83">
+            <div class="menuChild">
+                <img src="image/fightingTheOutbreak/yufangcuoshi.png">
+                <div>预防措施</div>
+            </div>
+        </a>
+        <a href="https://m.youlai.cn/whfy/juhe?kw=%E6%B6%88%E6%AF%92%E6%96%B9%E6%B3%95">
+            <div class="menuChild">
+                <img src="image/fightingTheOutbreak/fanghugongju.png">
+                <div>防护工具</div>
+            </div>
+        </a>
+        <a href="https://m.youlai.cn/whfy/article/343354.html">
+            <div class="menuChild">
+                <img src="image/fightingTheOutbreak/gelicuoshi.png">
+                <div>隔离措施</div>
+            </div>
+        </a>
+        <a href="https://m.youlai.cn/whfy/juhe?kw=%E5%B0%B1%E5%8C%BB%E5%88%A4%E6%96%AD">
+            <div class="menuChild">
+                <img src="image/fightingTheOutbreak/zhenzhicuoshi.png">
+                <div>诊治措施</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="newsBox">
+        <!-- <div class="mui-input-row mui-search">
+            <input type="search" class="mui-input-clear" placeholder="搜索疫情热点相关文章">
+        </div> -->
+
+    </div>
+
+</div>
+
+<script src="js/mui.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+<script src="js/app/mui.zoom.js"></script>
+<script src="js/app/mui.previewimage.js"></script>
+<script type="text/javascript">
+    //事件
+    window.onload = function () {
+        fillNewList();
+        changeFontSize();
+        getMenuData();
+
+        function getMenuData() {
+            $.ajax({
+                // type: "GET",
+                url: "http://jiujium1.sd96123.com/feiyan/country.json",
+                // dataType: "json",
+                success: function (res) {
+                    console.log(res.result)
+                    fillTopMenu(res.result)
+                },
+                error: function (res) {
+                    console.log(res.msg);
+                }
+            });
+        }
+
+    }
+
+
+    function fillTopMenu(data) {
+        var list = data;
+        var time = list.updateTime;
+        $("#countryQz").append(list.countryQz)
+        $("#qzAdd").append(list.qzAdd)
+        $("#countryYz").append(list.countryYz)
+        $("#yzAdd").append(list.yzAdd)
+        $("#countryZy").append(list.countryZy)
+        $("#zyAdd").append(list.zyAdd)
+        $("#countrySw").append(list.countrySw)
+        $("#swAdd").append(list.swAdd)
+        $("#updateTime").append(list.updateTime)
+    }
+</script>
+
+
+</body>
+
+</html>

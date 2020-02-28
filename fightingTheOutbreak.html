@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>主页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--    <script src="js/common/flexible.js"></script>-->
+    <!--    <link rel="stylesheet" href="css/mui.min.css">-->
+    <!--    <link rel="stylesheet" href="css/mui.min1.css">-->
+    <!--    <link href="css/app/previewimage.css" rel="stylesheet">-->
+    <!--    <link rel="stylesheet" href="css/app/Home_Page.css"/>-->
+    <!--    <link href="css/pullupordown.css" rel="stylesheet"/>-->
+    <!--自写样式-->
+    <link rel="stylesheet" href="css/app/fightingTheOutbreak/fightingTheOutbreak.css">
+
+    <!--    <script src="js/mui.min.js"></script>-->
+    <!--    <script src="js/mui.pullToRefresh.js"></script>-->
+    <!--    <script src="js/mui.pullToRefresh.material.js"></script>-->
+    <!--    <script src="js/jquery-1.11.1.min.js"></script>-->
+    <!--    <script src="js/app/QRcode/utf.js"></script>-->
+    <!--    <script src="js/app/QRcode/qrcode.js"></script>-->
+    <!--    <script src="js/app/QRcode/jquery.qrcode.js"></script>-->
+    <!--    <script src="js/common/rectify_deviation.js"></script>-->
+    <!--    <script src="js/common/common.js"></script>-->
+    <!--菜单相关-->
+    <script src="js/app/fightTheOutbreak/fightTheOutbreak.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app/fightTheOutbreak/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.min.js">
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+
+        .cardContent {
+            height: 11rem;
+            /* background-color: #fb9c58; */
+            background-image: url(image/fightingTheOutbreak/biaotou.png);
+            background-size: 100% 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cardBody {
+            background-color: #fdfffe;
+            box-shadow: 3px 3px 3px #888888;
+            border-radius: 3px;
+            position: absolute;
+            width: 90%;
+            top: 35%;
+            padding: .5rem .5rem;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz--transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+        }
+
+        .cardHeader {
+            font-size: 1rem;
+            margin-bottom: .3rem;
+        }
+
+        .cardHeader .headerTop {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+
+        .cardHeader .headerTop img {
+            height: 20px;
+            width: 20px;
+        }
+
+        .cardHeader .headerTop .headerRight {
+            color: #e44816;
+            display: flex;
+        }
+
+        .cardHeader .headerBottom {
+            color: #8f8f94;
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+
+        .cardBody .cardList {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .cardList .cardChild {
+            text-align: center;
+            line-height: 1.6rem;
+        }
+
+        .cardList .cardChild .cTop {
+            font-weight: bold;
+            /* font-size: 1.2rem; */
+        }
+
+        .cardList .cardChild .cCenter {
+            font-size: 1.5rem;
+        }
+
+        .cardList .cardChild .cBottom {
+            font-weight: bold;
+            font-size: 0.7rem;
+            display: flex;
+        }
+
+        .quezhen {
+            color: #e70000;
+        }
+
+        .yisi {
+            color: #F1C40F;
+        }
+
+        .zhiyu {
+            color: #689c3f;
+        }
+
+        .death {
+            color: #989898;
+        }
+
+        .menuContent {
+            display: flex;
+            margin-top: 3rem;
+            justify-content: space-around;
+        }
+
+        .menuContent img {
+            height: 2.5rem;
+        }
+
+        .menuChild {
+            text-align: center;
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        .newsBox {
+            color: #313131;
+            padding: 0 .5rem;
+            margin-top: 2rem;
+        }
+
+        .newsList {
+            /* padding-bottom: 1.3rem; */
+            /* border-bottom: 1px solid #D4D4D4; */
+            margin-bottom: 2rem;
+            font-family: inherit;
+        }
+
+        .newsList .title {
+            /* text-indent: 2em; */
+            color: #313131;
+            font-size: 1.1rem;
+            line-height: normal;
+        }
+
+        .newsList .imgBox {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-around;
+        }
+
+        .newsList img {
+            height: 4.5rem;
+            padding: 0px 3px;
+        }
+
+        .newsList .detail {
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            color: #989898;
+            font-size: 1rem;
+        }
+
+        /* 窄屏手机特殊处理 */
+        @media screen and (max-width: 320px) {
+            html {
+                font-size: 13px !important;
+            }
+        }
+
+        /* 平板特殊处理 */
+        @media screen and (min-width: 600px) {
+            html {
+                font-size: 30px !important;
+            }
+        }
+
+        /* 平板pro特殊处理 */
+        @media screen and (min-width: 1024px) {
+            html {
+                font-size: 35px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="content">
+    <div class="cardContent">
+        <div class="cardBody">
+            <div class="cardHeader">
+                <div class="headerTop">
+                    <div>全国疫情播报</div>
+                    <div class="headerRight" onclick="viewDetail()">
+                        <a
+                                href="https://iflow.uc.cn/webview/article/newspecial.html?uc_biz_str=S%3Acustom%7CC%3Atitlebar_hover_2&aid=3804775841868884355&cid=100&uc_param_str=lodndseiwifrvesvntgi&sm_article_id=3804775841868884355&uc_h5_page_name=iflowspecial&feiyan=1&feiyan_jump=-3&app=uc-iflow&enterfrom=xxl-bigboycard&zzd_from=uc-iflow&dl_type=2&recoid=206003290583001094&activity=1&activity2=1&pagetype=share">
+                            查看详细
+                            <img src="image/fightingTheOutbreak/arror.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="headerBottom" id="updateTime"></div>
+            </div>
+            <div class="cardList">
+                <div class="cardChild">
+                    <div class="cTop">
+                        确诊
+                    </div>
+                    <div class="cCenter quezhen" id="countryQz">
+
+                    </div>
+                    <div class="cBottom quezhen">较昨日+
+                        <div id="qzAdd"></div>
+                    </div>
+                </div>
+                <div class="cardChild">
+                    <div class="cTop">
+                        疑似
+                    </div>
+                    <div class="cCenter yisi" id="countryYz">
+
+                    </div>
+                    <div class="cBottom yisi">较昨日+
+                        <div id="yzAdd"></div>
+                    </div>
+                </div>
+                <div class="cardChild">
+                    <div class="cTop">
+                        治愈
+                    </div>
+                    <div class="cCenter zhiyu" id="countryZy">
+
+                    </div>
+                    <div class="cBottom zhiyu">较昨日+
+                        <div id="zyAdd"></div>
+                    </div>
+                </div>
+                <div class="cardChild">
+                    <div class="cTop">
+                        死亡
+                    </div>
+                    <div class="cCenter death" id="countrySw">
+
+                    </div>
+                    <div class="cBottom death">较昨日+
+                        <div id="swAdd"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menuContent">
+    <div class="menuChild" id="protection">
+        <a href="personalProtection.html">
+            <img src="image/fightingTheOutbreak/gerenfanghu.png">
+            <div>个人防护</div>
+        </a>
+    </div>
+    <div class="menuChild" id="inquiry">
+        <a href="outbreakConsultation.html">
+            <img src="image/fightingTheOutbreak/yiqingwenda.png">
+            <div>疫情问诊</div>
+        </a>
+    </div>
+    <div class="menuChild" id="online">
+        <a href="onlineFreeConsultation.html">
+            <img src="image/fightingTheOutbreak/zaixianyizhen.png">
+            <div>在线义诊</div>
+        </a>
+    </div>
+    <div class="menuChild" id="progress">
+        <a
+                href="https://iflow.uc.cn/webview/article/newspecial.html?uc_biz_str=S%3Acustom%7CC%3Atitlebar_hover_2&aid=3804775841868884355&cid=100&uc_param_str=lodndseiwifrvesvntgi&sm_article_id=3804775841868884355&uc_h5_page_name=iflowspecial&feiyan=1&feiyan_jump=-3&app=uc-iflow&enterfrom=xxl-bigboycard&zzd_from=uc-iflow&dl_type=2&recoid=206003290583001094&activity=1&activity2=1&pagetype=share">
+            <img src="image/fightingTheOutbreak/zuixinjinzhan.png">
+            <div>最新进展</div>
+        </a>
+    </div>
+</div>
+
+<div class="newsBox">
+
+
+</div>
+
+</div>
+
+<script src="js/mui.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+<script src="js/app/mui.zoom.js"></script>
+<script src="js/app/mui.previewimage.js"></script>
+<script type="text/javascript">
+    //时间戳
+    var timestamp = new Date().getTime();
+    var globalUrl;
+    var port;
+
+    //得到全局url
+    GetUrl()
+
+    function GetUrl() {
+        globalUrl = "http://" + location.hostname;
+        port = ':' + location.port;
+        // console.log(globalUrl)
+    }
+
+    //事件
+    window.onload = function () {
+        // changeFontSize();
+        // showNewsList();
+        getMenuData();//顶部数据
+        function getMenuData() {
+            $.ajax({
+                // type: "GET",
+                url: "http://jiujium1.sd96123.com/feiyan/country.json?time=" + timestamp,
+                // dataType: "json",
+                success: function (res) {
+                    // console.log(res.result)
+                    fillTopMenu(res.result)
+                },
+                error: function (res) {
+                    console.log(res.msg);
+                }
+            });
+        }
+
+        getNewsList()
+    }
+
+    function fillTopMenu(data) {
+        var list = data;
+        var time = list.updateTime;
+        $("#countryQz").append(list.countryQz)
+        $("#qzAdd").append(list.qzAdd)
+        $("#countryYz").append(list.countryYz)
+        $("#yzAdd").append(list.yzAdd)
+        $("#countryZy").append(list.countryZy)
+        $("#zyAdd").append(list.zyAdd)
+        $("#countrySw").append(list.countrySw)
+        $("#swAdd").append(list.swAdd)
+        $("#updateTime").append(list.updateTime)
+    }
+
+    function getNewsList() {
+        $.ajax({
+            // url: "http://jiujium1.sd96123.com:8081/gateway/sc-admin/api/v1/sys/prevention/list",
+            url: globalUrl + port + "/gateway/sc-admin/api/v1/sys/prevention/list",
+            // data: param,
+            success: function (result) {
+                // alert(111)
+                var str = '';
+                if (!result.success) {
+                    return;
+                } else {
+                    for (var i = 0; i < result.data.list.length; i++) {
+                        if (result.data.list[i].status == 1) {
+                            var param = {};
+                            param.id = result.data.list[i].id;
+                            var address = result.data.list[i].address
+                            // console.log(typeof address)
+                            str += '<a href="javascript:void(0)" id="'
+                                + result.data.list[i].id +
+                                '"><div class="newsList" onclick="jump(this)" data-id="' + result.data.list[i].id + '" data-url="' + result.data.list[i].address + '"><div class="title">'
+                                + result.data.list[i].title +
+                                '</div><div class="imgBox">';
+                            // console.log(JSON.stringify(result.data))
+                            // console.log(JSON.stringify(result.data.list[i]))
+                            if (result.data.list[i].url != null && result.data.list[i].url != "") {
+                                $.ajax({
+                                    url: globalUrl + port + "/gateway/sc-admin/api/v1/sys/prevention/url",
+                                    data: param,
+                                    dataType: "json",
+                                    success: function (imgs) {
+                                        // console.log(JSON.stringify(imgs))
+                                        if (imgs.data.length > 0) {
+                                            for (var j = 0; j < imgs.data.length; j++) {
+                                                var imgUrl = imgs.data[j].url;
+                                                imgUrl = globalUrl + port + "/" + imgUrl.substring(imgUrl.indexOf("resources"))
+                                                // imgUrl = imgUrl.replace(/http:\/\/192.168.1.124:8082/g,"http://jiujium1.sd96123.com:8081")
+                                                str += '<img src="' + imgUrl + '">'
+                                            }
+                                        }
+                                    },
+                                    err: function (err) {
+                                    },
+                                    async: false
+                                });
+                            }
+                            str += '</div><div class="detail"><div>'
+                                + result.data.list[i].source +
+                                '</div><div>'
+                                + result.data.list[i].releaseTime +
+                                '</div></div></div><a>'
+                        }
+                    }
+                }
+                // console.log(str);
+                $(".newsBox").append(str);
+            }
+            ,
+            err: function (err) {
+            }
+            ,
+        })
+        ;
+    }
+
+    //详情页
+    mui(".newsBox").on('tap', 'a', function () {
+        var id = this.id;
+        localStorage.setItem('zxid', id)
+        window.location.href = 'outbreakArticle.html';
+    });
+
+    function jump(e) {
+        // console.log($(e)[0].dataset);
+        var id = $(e)[0].dataset.id;
+        var address = $(e)[0].dataset.url;
+        //判断跳转地址是否为空,若不为空jump跳转到新闻详细页面读取zxid
+        localStorage.removeItem('zxid')
+        localStorage.setItem('zxid', id)
+        if (address !== null && address !== 'null' && address != '') {
+            window.location.href = address;
+        } else {
+            // alert(window.location.href)
+            location.href = 'outbreakArticle.html';
+        }
+    }
+</script>
+
+
+</body>
+
+</html>
